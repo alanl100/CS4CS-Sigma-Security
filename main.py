@@ -258,7 +258,7 @@ class PhishingDetector:
         prediction = self.model.predict(X)[0]
         probability = self.model.predict_proba(X)[0]
         
-        result = "🚨 PHISHING" if prediction == 1 else "✅ LEGITIMATE"
+        result = "PHISHING" if prediction == 1 else "LEGITIMATE"
         confidence = f"{max(probability):.1%}"
         
         return f"{result} (Confidence: {confidence})"
